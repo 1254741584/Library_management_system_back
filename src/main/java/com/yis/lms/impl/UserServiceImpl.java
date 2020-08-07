@@ -20,4 +20,10 @@ public class UserServiceImpl implements UserService{
 		return UserMapper.getUserById(id);
 	}
 
+	@Override
+	public User userLoginByPhone(String phone, String password) {
+		// TODO Auto-generated method stub
+		return UserMapper.userLoginByPhone(phone, password);
+	}
+
 }

@@ -13,5 +13,11 @@ public interface UserMapper {
 	 * 获取用户信息
 	 * */
 	User getUserById(@Param("id") String id);
+	
+	/*
+	 * 用户登陆 通过手机号
+	 * */
+	User userLoginByPhone(@Param("phone") String phone, @Param("password") String password);
+	
 
 }
