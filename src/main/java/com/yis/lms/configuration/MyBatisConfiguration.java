@@ -14,8 +14,8 @@ import java.util.Properties;
 /**
 * Created by wzj on 2018/3/17.
 */
-@Configuration
-@ConfigurationProperties(prefix = "spring.datasource")
+//@Configuration
+//@ConfigurationProperties(prefix = "spring.datasource")
 public class MyBatisConfiguration
 {
 /**

@@ -6,6 +6,8 @@ import com.yis.lms.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,6 +57,18 @@ public class UserController
             return RtnResult.failure("登陆失败，用户名或者密码不正确");
         }
     	return RtnResult.success("登录成功", user);
+    }
+
+    /**
+     * 获取验证码
+     */
+    @GetMapping(value = "/login")
+    public RtnResult<String> sendRegisterCode(@NonNull String phone){
+        if (StringUtils.isEmpty(phone)) {
+            throw new BadRequestException("手机号不能为空");
+        }
+
+        return RtnResult.success("验证码发送成功", "验证码发送成功");
     }
     
 }
